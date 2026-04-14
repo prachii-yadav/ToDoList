@@ -1,32 +1,13 @@
 {
-  "name": "todolist",
+  "name": "todolist-root",
   "version": "1.0.0",
-  "description": "Personal To-Do List Manager with Builder and Memento patterns",
-  "main": "dist/app.js",
+  "description": "Monorepo root — run backend (server/) and frontend (client/) together",
+  "private": true,
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/app.js",
-    "dev": "nodemon --watch src --ext ts --exec ts-node src/app.ts",
-    "typecheck": "tsc --noEmit"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "compression": "^1.8.1",
-    "express": "^5.2.1",
-    "uuid": "^13.0.0",
-    "winston": "^3.19.0",
-    "zod": "^4.3.6"
-  },
-  "devDependencies": {
-    "@types/compression": "^1.8.1",
-    "@types/express": "^5.0.6",
-    "@types/node": "^25.6.0",
-    "@types/uuid": "^10.0.0",
-    "nodemon": "^3.1.14",
-    "ts-node": "^10.9.2",
-    "typescript": "^6.0.2"
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "build:server": "npm run build --prefix server",
+    "build:client": "npm run build --prefix client",
+    "install:all": "npm install --prefix server && npm install --prefix client"
   }
 }
